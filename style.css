@@ -1,0 +1,150 @@
+/* 公共样式 */
+/* 用通配选择器重置所有元素的默认样式 */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /* 平滑滚动 */
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 14px;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    /* 页面内容距离顶部留出64px(header的高度)的间距，以容纳固定在顶部的header，避免内容被header遮挡 */
+    padding-top: 64px;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+/* 只有顶部导航固定；区块标题用的 <header class="tools-header"> 必须保持正常文档流 */
+header:not(.site-header) {
+    position: static;
+}
+/* header也写在公共样式里，多个页面可共用 */
+.site-header {
+    /* 滚动时，header固定在视口顶部，不会随着页面滚动而移动 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    height: 64px;
+    background-color: #fff;
+    box-shadow: none;
+    /* 阴影慢慢出现、消失 */
+    transition: box-shadow 0.3s ease;
+}
+/* 滚动后才出现，JS：滚动时 scrollY > 0 就给 .site-header 添加 is-scrolled 类 */
+.site-header.is-scrolled {
+    /* 滚动时，淡淡底边线 */
+    /* 相当于：在元素正下方画一条非常淡、没有模糊的黑色阴影。 */
+    /* 前三个参数：水平偏移量、垂直偏移量、模糊半径。最后一个参数：阴影颜色 */
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08); 
+}
+.site-header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.site-header .logo .logo-icon {
+    /* 这三行使得svg在父元素的水平、垂直方向都居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-color: #f3d4ff;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.site-header .logo .logo-icon svg {
+    /* 去掉行内基线空隙 */
+    display: block;
+    width: 26px;
+    height: 26px;
+    /* 把元素沿着 Y轴向下移动 1px */
+    transform: translateY(1px);
+    color: #a855f7;
+}
+.site-header .logo .logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #7e22ce;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+.site-header .logo:hover .logo-text {
+    color: #9333ea;
+}
+.site-header .nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+}
+.site-header .nav ul a {
+    font-weight: 500;
+    color: #666;
+    transition: color 0.2s ease;
+}
+.site-header .nav ul a:hover {
+    color: #1a1a1a;
+}
+.site-header .login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.site-header .login .login-button {
+    font-weight: 500;
+    color: #666;
+    transition: color 0.2s ease;
+    padding: 8px 16px;
+}
+.site-header .login .login-button:hover {
+    color: #1a1a1a;
+    background-color: #f3d4ff;
+    border-radius: 8px;
+    
+}
+.site-header .login .free-start {
+    font-weight: 600;
+    color: #fff;
+    background-color: #9333ea;
+    transition: all 0.25s;
+    position: relative;
+    border-radius: 8px;
+    padding: 9px 20px;
+    overflow: hidden;
+}
+.site-header .login .free-start:hover {
+    /* 鼠标悬停时，元素沿着 Y轴向上移动 2px */
+    transform: translateY(-2px);
+    /* 鼠标悬停时，元素周围产生阴影 */
+    box-shadow: 0 4px 16px rgba(147, 51, 234, 0.2);
+}
