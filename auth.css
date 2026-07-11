@@ -1,0 +1,356 @@
+body {
+    padding-top: 0;
+}
+.toast {
+
+}
+.auth-layout {
+    display: grid;
+    grid-template-columns: 5fr 6fr;   /* 左侧5fr，右侧6fr */
+    min-height: 100vh;   /* 盒子的最小高度为浏览器窗口高度的100%，内容多了不会溢出，比 height灵活 */
+}
+.visual-panel,
+.form-panel {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.visual-panel {
+    padding: 32px;
+    background: #fcf7ff;
+}
+/* gallery = 布局容器，负责居中占位，grid = 网格容器，负责卡片排列。职责分开更清晰 */
+.visual-gallery {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;               /* gallery是 flex弹性盒子，主轴方向为垂直方向，占满垂直方向剩余空间 */
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;      /*元素的宽度等于父元素内容区域的 100% */
+    max-width: 360px;
+    height: 420px;
+}
+.visual-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+.visual-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.visual-item:nth-child(1) {
+    grid-row: span 2;      /* 合并2行,让第1个 item 占据2行 */
+}
+.visual-item:nth-child(4) {
+    grid-column: span 2;   /* 合并2列,让第4个 item 占据2列 */
+}
+.v1 {
+    background: #fff8dc;
+}
+.v2 {
+    background: #dcf8dc;
+}
+.v3 {
+    background: #e8f4ff;
+}
+.v4 {
+    background: #ffe7f3;
+}
+.v5 {
+    background: #f5f5f7;
+}
+/* 作用：铺满卡片、设背景色、标签靠底，外框（item）和内容层（inner）分离，方便背景、圆角裁切、hover */
+/* 也能直接写在 item里，但复杂效果用 inner更合适，便于维护 */
+.visual-item-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+}
+.visual-item-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    font-size: 10px;
+    font-weight: 600;
+    color: #9333ea;
+    background-color: aliceblue;
+    border-radius: 12px;
+    padding: 3px 8px;
+    border: solid 1px rgba(0, 0, 0, 0.06);
+}
+.visual-bottom {
+    position: relative;
+    z-index: 1;
+}
+.visual-quote {
+    font-size: 13px;
+    color: #A0A0B8;
+    line-height: 1.6;
+}
+.visual-quote strong {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1F1F2B;
+    margin-bottom: 8px;
+}
+.visual-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+    padding-top: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #9333ea;
+    border-top: solid 1px rgba(0, 0, 0, 0.06);
+}
+.visual-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #A0A0B8;
+}
+.form-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 40px;
+    background: #faf0ff;
+}
+.back-link {
+    position: absolute;
+    right: 32px;
+    top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #18181F;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+.back-link img {
+    width: 14px;
+    height: 14px;
+}
+.back-link:hover {
+    color: #9333ea;
+}
+.form-box {
+    width: 100%;
+    max-width: 400px;
+}
+.form-header {
+    margin-bottom: 32px;
+}
+.form-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.05px;
+    margin-bottom: 8px;
+}
+.form-subtitle {
+    font-size: 14px;
+    color: #A0A0B8;
+}
+.form-subtitle a {
+    color: #9333ea;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.form-subtitle a:hover {
+    color: #A9AE8E;
+}
+.form-tabs {
+    display: flex;
+    gap: 2px;
+    /* padding: 3px; */
+    margin-bottom: 24px;
+    border-radius: 12px;
+    background-color: #f3d4ff;
+}
+.form-tab {
+    flex: 1;                   /* 每个 tab的宽度为父元素宽度的1/2 */
+    border: none;             /* 去掉默认边框 */
+    background: transparent;        /* 去掉默认背景 */
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #9333ea;
+    font-weight: 500;
+    cursor: pointer;
+}
+.form-tab.active {
+    /* border: solid 1px rgba(0, 0, 0, 0.06); */
+    background: #f7e7ff;
+    color: #18181F;
+    box-shadow: 0 0 0 2px #faf0ff;   /* 有个2px描边，更清晰 */
+}
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.form-section button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    border: none;
+    background: #f3d4ff;
+    color: #9333ea;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 11px 16px;
+    transition: all 0.3s;
+}
+.form-section button:hover {
+    background: #f7e7ff;
+    border-color: #f7e7ff;
+}
+.form-section img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;        /* 防止图片被压缩 */
+}
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.form-divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+}
+.form-divider-text {
+    font-size: 12px;
+    color: #A0A0B8;
+    white-space: nowrap;
+}
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.field-label {
+    font-size: 13px;
+    color: #A0A0B8;
+    font-weight: 500;
+}
+.field-input-wrap {
+    position: relative;
+}
+.field-eyebtn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #A0A0B8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.field-eyebtn:hover {
+    
+    color: #9333ea;
+}
+.field-eyebtn img {
+    width: 16px;
+    height: 16px;
+}
+.field-input {
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 14px;
+    border: solid 1px rgba(0, 0, 0, 0.06);
+    background: #f3d4ff;
+    outline: none;
+    font-size: 14px;
+    color: #F0F0F8;
+    transition: all 0.3s;
+}
+.field-input:focus {
+    border-color: #9333ea;
+    background: #f4deff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.field-row a {
+    font-size: 12px;
+    color: #18181F;
+    transition: all 0.3s;
+}
+.field-row a:hover {
+    color: #9333ea;
+}
+.form-submit {
+    width: 100%;
+    border: none;
+    background: #bf8cff;
+    border-radius: 14px;
+    margin-top: 8px;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.form-submit:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    background: #b06af8;
+}
+.form-footer {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 24px;
+    color: #A0A0B8;
+}
+.form-footer a {
+    color: #606078;
+    transition: all 0.3s;
+}
+.form-footer a:hover {
+    color: #9333ea;
+}

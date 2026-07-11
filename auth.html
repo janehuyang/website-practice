@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>登录 / 注册 — PixelMind</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- 整个页面：div.toast + div.auth-layout -->
+    <div class="toast">
+        <span class="toast-dot"></span>
+        <span id="toastMsg"></span>
+    </div>
+    <!-- 页面主体：div.auth-layout > aside.visual-panel + main.form-panel -->
+    <div class="auth-layout">
+        <!-- 左侧面板：div.logo + div.gallery + div.bottom-->
+        <aside class="visual-panel">
+            <!-- logo样式通用，加相同类名直接引用，在style.css里设置过了 -->
+            <div class="logo">
+                <span class="logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L13.8 9.2L21 11L13.8 12.8L12 20L10.2 12.8L3 11L10.2 9.2L12 2Z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span class="logo-text">PixelMind</span>
+            </div>
+            <!-- 左侧中间：div.gallery > div.grid > 5*div.item > div.inner > span.tag -->
+            <div class="visual-gallery">
+                <div class="visual-grid">
+                    <div class="visual-item">
+                        <div class="visual-item-inner v1">
+                            <span class="visual-item-tag">✦ 文生图</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-item-inner v2">
+                            <span class="visual-item-tag">▶ 图生视频</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-item-inner v3">
+                            <span class="visual-item-tag">◈ 风格迁移</span>
+                        </div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-item-inner v4">
+                            <span class="visual-item-tag">✦ 文生图</span>
+                        </div>
+                    </div>
+                    <!-- <div class="visual-item">
+                        <div class="visual-item-inner v5">
+                            <span class="visual-item-tag">⬡ 超分辨率</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- 左侧底部：div.quote + div.stats(3*data(num+label)) -->
+            <div class="visual-bottom">
+                <div class="visual-quote">
+                    <strong>把创意交给 AI，把时间留给更重要的事</strong> <br>
+                    用 AI 生成令人惊叹的图片与视频，从 Prompt 到作品，只需几秒。
+                </div>
+                <div class="visual-stats">
+                    <div class="visual-data">
+                        <span class="visual-num">50万+</span>
+                        <span class="visual-label">创作者</span>
+                    </div>
+                    <div class="visual-data">
+                        <span class="visual-num">2000万+</span>
+                        <span class="visual-label">作品已生成</span>
+                    </div>
+                    <div class="visual-data">
+                        <span class="visual-num">免费</span>
+                        <span class="visual-label">起步无门槛</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- 右侧面板：a.返回首页 + div.form-box -->
+        <main class="form-panel">
+            <a href="./index.html" class="back-link">
+                <img src="images/icons/chevron-left.svg" alt="">
+                返回首页
+            </a>
+            <!-- 表单容器：header(title+subtitle) + tabs(2*tab) + section(2*btn) + divider + fields(2*group) + submit + footer(3*a+文字) -->
+            <div class="form-box">
+                <div class="form-header">
+                    <h1 class="form-title">欢迎回来</h1>
+                    <p class="form-subtitle">还没有账号？
+                        <a href="#">免费注册</a> 
+                    </p>
+                </div>
+                <div class="form-tabs">
+                    <button class="form-tab active">登录</button>
+                    <button class="form-tab">注册</button>
+                </div>
+                <div class="form-section">
+                    <button class="form-wxbtn"><img src="images/icons/message-circle-more.svg" alt="">使用微信登录</button>
+                    <button class="form-googlebtn"><img src="images/icons/globe.svg" alt="">使用 Google 登录</button>
+                </div>
+                <div class="form-divider">
+                    <div class="form-divider-line"></div>
+                    <span class="form-divider-text">或使用邮箱</span>
+                    <div class="form-divider-line"></div>
+                </div>
+                <div class="form-fields">
+                    <div class="field-group">
+                        <label class="field-label">邮箱地址</label>
+                        <div class="field-input-wrap">
+                            <input class="field-input" type="email" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-row">
+                            <label class="field-label">密码</label>
+                            <a href="#" class="field-forgot">忘记密码？</a>
+                        </div>
+                        <div class="field-input-wrap">
+                            <input class="field-input" type="password" placeholder="请输入密码">
+                            <button class="field-eyebtn">
+                                <img src="images/icons/eye.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="form-submit">登录</button>
+                <p class="form-footer">登录即代表同意 
+                    <a href="#">服务条款</a> · 
+                    <a href="#">隐私政策</a>
+                    <br>
+                    遇到问题？<a href="#">联系客服</a>
+                </p>
+            </div>
+        </main>
+    </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
