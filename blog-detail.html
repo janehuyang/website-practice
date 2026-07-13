@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>2026 年文生图终极提示词指南 | PixelMind博客</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog-detail.css">
+  <link rel="stylesheet" href="css/blog-list.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- header-inner包含三部分：logo（已写过） + 返回博客 + 免费开始（已写过） -->
+      <a href="./index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L13.8 9.2L21 11L13.8 12.8L12 20L10.2 12.8L3 11L10.2 9.2L12 2Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">PixelMind</span>
+      </a>
+      <a href="./blog-list.html" class="back-blog">← 返回博客</a>
+      <div class="login">
+        <a href="auth.html" class="free-start">免费开始</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 页面主内容：左边文章 article(header+img+content+footer) + 右边侧边栏 sidebar(toc+cta) -->
+  <div class="article-layout">
+    <article>
+      <div class="article-header">
+        <div class="blog-tag-row">
+          <span class="blog-tag tag-teaching">教程</span>
+          <span class="blog-tag tag-selected">精选</span>
+        </div>
+        <h1 class="article-title">2026 年文生图终极提示词指南：100 个高效 Prompt 模板</h1>
+        <p class="article-subtitle">从风格描述到光线控制，从构图语言到氛围营造，本文整理了 100 个经过验证的高效提示词模板，涵盖写实、插画、概念艺术等主要场景。</p>
+        <!-- 复用 blog-list.html 中的 blog-feature-meta，样式相同，内容略有不同 -->
+        <div class="blog-feature-meta">
+          <div class="blog-meta-icon">✍</div>
+          <div>
+            <div class="blog-meta-author">设计研究院</div>
+            <div style="font-size: 12px;">官方创作团队</div>
+          </div>
+          <span>|</span>
+          <span>2026-03-20</span>
+          <span>|</span>
+          <span>⏱ 12 分钟阅读</span>
+          <span>|</span>
+          <span>👁 8,432 阅读</span>
+        </div>
+      </div>
+      <div class="article-img">🎨</div>
+      <div class="article-content">
+        <h2>一、为什么提示词如此重要？</h2>
+        <p>提示词（Prompt）是你与 AI 沟通的唯一语言。同样的模型、同样的参数设置，不同的提示词可以产生天壤之别的结果。一个写得好的 Prompt，能让 AI 准确理解你的意图，生成出令人惊叹的作品。</p>
+        <p>在大量测试和社区经验总结的基础上，我们整理了这份提示词指南。内容分为五个核心维度：主体描述、风格定义、光线设置、构图控制和质量强化词。</p>
+        <div class="tip-block">
+          <div class="tip-label">💡 核心原则</div>
+          <p>好的 Prompt 遵循「主体 + 风格 + 光线 + 构图 + 质量」的基本结构，越具体越好，越有画面感越准确。</p>
+        </div>
+        <h2>二、基础结构模板</h2>
+        <h3>2.1 写实摄影风格</h3>
+        <p>写实摄影是最常用的风格之一，适合产品图、人像、风景等场景。关键是加入具体的相机和镜头参数。</p>
+        <div class="prompt-block">"[主体描述], [具体场景], [光线描述], shot on Canon EOS R5, 85mm f/1.4 lens, golden hour, photorealistic, 8k, ultra detailed"</div>
+        <div class="example-grid">
+          <div class="example-img blog-card-bgc1">🌆</div>
+          <div class="example-img blog-card-bgc5">🌸</div>
+          <div class="example-img blog-card-bgc2">🏔️</div>
+        </div>
+        <h3>2.2 插画与艺术风格</h3>
+        <p>当你想要更具艺术感的输出时，风格关键词至关重要。明确指定艺术媒介和参考风格，能让 AI 更准确地还原你想要的质感。</p>
+        <div class="prompt-block">"[主体描述], [场景], watercolor illustration, soft edges, pastel colors, by Studio Ghibli, warm lighting, cozy atmosphere, detailed background"</div>
+        <h2>三、光线描述关键词库</h2>
+        <p>光线是决定图片氛围的核心因素。以下是最有效的光线描述词，按效果分类：</p>
+        <ul>
+          <li><strong>暖光/自然光：</strong>golden hour, magic hour, warm sunlight, dappled light</li>
+          <li><strong>戏剧性光线：</strong>dramatic lighting, chiaroscuro, rim lighting, volumetric light</li>
+          <li><strong>柔和弥散：</strong>soft diffused light, overcast sky, studio lighting, butterfly lighting</li>
+          <li><strong>夜景/人工光：</strong>neon lights, city lights, moonlight, candlelight, bioluminescent</li>
+        </ul>
+        <h2>四、质量强化词（必加）</h2>
+        <p>这些词语能显著提升生成图片的整体质量，建议在大多数 Prompt 末尾加入：</p>
+        <div class="prompt-block">"..., masterpiece, best quality, ultra detailed, sharp focus, professional photography, award winning, highly detailed, intricate details"</div>
+        <div class="tip-block">
+          <div class="tip-label">⚠️ 注意</div>
+          <p>不要一次性堆砌太多修饰词，选择最关键的 3-5 个即可。词语之间用逗号分隔，AI 会对每个词分别加权处理。</p>
+        </div>
+        <h2>五、负向提示词（Negative Prompt）</h2>
+        <p>告诉 AI「不要什么」和告诉它「要什么」同样重要。以下是通用的负向提示词，可以有效减少常见缺陷：</p>
+        <div class="prompt-block">"blurry, low quality, bad anatomy, extra limbs, duplicate, watermark, text, signature, ugly, deformed, distorted, disfigured"</div>
+      </div>
+      <div class="article-footer">
+        <div class="article-footer-tags">
+          <span class="article-footer-tag">#文生图</span>
+          <span class="article-footer-tag">#提示词</span>
+          <span class="article-footer-tag">#Prompt 技巧</span>
+          <span class="article-footer-tag">#AI 绘画</span>
+        </div>
+        <div class="share-row">
+          <span>分享文章：</span>
+          <button class="share-btn">📋 复制链接</button>
+          <button class="share-btn">🐦 Twitter</button>
+          <button class="share-btn">💬 微信</button>
+        </div>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="toc-card">
+        <div class="toc-title">文章目录</div>
+        <div class="toc-list">
+          <div class="toc-item active">
+            <div class="toc-num">1</div>
+            为什么提示词如此重要
+          </div>
+          <div class="toc-item">
+            <div class="toc-num">2</div>
+            基础结构模板
+          </div>
+          <div class="toc-item">
+            <div class="toc-num">3</div>
+            光线描述关键词库
+          </div>
+          <div class="toc-item">
+            <div class="toc-num">4</div>
+            质量强化词（必加）
+          </div>
+          <div class="toc-item">
+            <div class="toc-num">5</div>
+            负向提示词
+          </div>
+        </div>
+      </div>
+      <div class="cta-card">
+        <h4>立即用文生图创作</h4>
+        <p>注册免费获得 30 积分，马上试试这些提示词模板</p>
+        <button class="btn-cta-white">🚀 免费开始</button>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <!-- 页脚内容 -->
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">© 2026 PixelMind. All rights reserved.</div>
+        <div class="footer-right">
+          <a href="#">隐私政策</a>
+          <a href="#">服务条款</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
