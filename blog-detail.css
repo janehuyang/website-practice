@@ -1,0 +1,236 @@
+.back-blog {
+    transition: color 0.3s;
+}
+.back-blog:hover {
+    color: #9333ea;
+}
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: start;
+    padding: 48px 40px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+.article-header {
+    margin-bottom: 32px;
+}
+.article-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+.article-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #5A5A72;
+}
+.blog-meta-author {
+    font-size: 14px;
+    font-weight: 600;
+    color: #18181F;
+}
+.article-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 36px;
+    font-size: 80px;
+    background: #9333ea;
+    height: 320px;
+    border-radius: 24px;
+}
+.article-content h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #18181F;
+    margin: 32px 0 14px;
+}
+.article-content p {
+    font-size: 16px;
+    color: #5A5A72;
+}
+.tip-block {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: rgba(45, 212, 191, 0.06);
+    border-radius: 0 8px 8px 0;
+    border-left: 3px solid #2DD4BF;
+}
+.tip-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #2DD4BF;
+}
+.tip-block p {
+    margin: 0;
+    color: #5A5A72;
+}
+.article-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 10px;
+    color: #18181F;
+}
+.prompt-block {
+    position: relative;
+    background: #1a1a2e;
+    margin: 16px 0;
+    padding: 18px 20px;
+    font-size: 14px;
+    font-family: monospace;
+    color: rgba(180, 160, 255, 0.9);
+    line-height: 1.6;
+    border-radius: 12px;
+}
+.example-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+.example-img { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    height: 120px;
+    font-size: 32px;
+}
+.article-content ul {
+    margin: 12px 0 16px 20px;
+    list-style: disc;   /* 列表项符号为实心圆 */
+    padding-left: 0.05em;  /* 列表项整体向右缩进 0.05em */
+}
+.article-content ul li {
+    margin-bottom: 6px;
+    color: #5A5A72;
+}
+
+.article-footer {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.article-footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.article-footer-tag {
+    padding: 5px 12px;
+    font-size: 13px;
+    background: #F0EFF4;
+    color: #5A5A72;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.share-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #9090A8;
+    font-size: 14px;
+}
+.share-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.share-btn:hover {
+    border-color: #9333ea;
+}
+
+.sidebar {
+    position: sticky;   /* 粘性定位，固定在页面右侧，常用于吸顶导航、分类标题 */
+    top: 88px
+}
+.toc-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+}
+.toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 0.08em;
+    text-decoration: uppercase;
+    color: #9090A8;
+}
+.toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #5A5A72;
+}
+.toc-item.active {
+    color: #9333ea;
+}
+.toc-item:hover {
+    color: #9333ea;
+}
+.toc-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;    /* 不压缩，保持固定宽度 */
+    color: #9333ea;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f3d4ff;
+    font-size: 10px;
+    font-weight: 700;
+}
+.cta-card {
+    padding: 20px;
+    border-radius: 16px;
+    background: #9333ea;
+    border: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+}
+.cta-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+}
+.cta-card p {
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.btn-cta-white {
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9333ea;
+    border: none;
+    cursor: pointer;
+}
