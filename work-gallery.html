@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>我的作品集 —— PixelMind</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog-list.css">
+  <link rel="stylesheet" href="css/work-gallery.css">
+</head>
+<!-- 整体结构：nav(顶部导航) + page-layout(页面的主体布局) -->
+<body>
+  <!-- 顶部导航nav包含：a.logo + links(3个选项) + right(badge+新建创作+用户) -->
+  <nav>
+    <div class="nav-inner">
+      <!-- 复用 index.html的 logo,样式相同 -->
+      <a href="./index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L13.8 9.2L21 11L13.8 12.8L12 20L10.2 12.8L3 11L10.2 9.2L12 2Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">PixelMind</span>
+      </a>
+      <div class="nav-links">
+        <div class="nav-link">🎨 工作台</div>
+        <div class="nav-link active">📁 我的作品集</div>
+        <div class="nav-link">🌐 作品广场</div>
+      </div>
+      <div class="nav-right">
+        <div class="credits-badge">
+          <span class="credits-icon">⚡</span>
+          <span class="credits-num">842</span>
+          <span>积分</span>
+        </div>
+        <a href="#" class="btn-generate">+ 新建创作</a>
+        <div class="user-avatar">👤</div>
+      </div>
+    </div>
+  </nav>
+  <!-- 页面的主体布局page-layout包含：侧边栏sidebar() + 主内容main-content() -->
+  <div class="page-layout">
+    <!-- 侧边栏sidebar包含：多个title和item(icon+文字) -->
+    <aside class="sidebar">
+      <div class="sidebar-title">分类</div>
+      <div class="sidebar-item active">
+        <span class="icon">🖼️</span>
+        全部作品
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">✨</span>
+        文生图
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">🎬</span>
+        图生视频
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">🎨</span>
+        风格迁移
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">✂️</span>
+        背景移除
+      </div>
+      <div class="sidebar-title">状态</div>
+      <div class="sidebar-item">
+        <span class="icon">🔒</span>
+        仅自己可见
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">🌐</span>
+        公开展示中
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">⭐</span>
+        已收藏
+      </div>
+      <div class="sidebar-title">时间</div>
+      <div class="sidebar-item">
+        <span class="icon">📅</span>
+        今天
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">📅</span>
+        本周
+      </div>
+      <div class="sidebar-item">
+        <span class="icon">📅</span>
+        本月
+      </div>
+    </aside>
+    <!-- 主内容main-content包含：header + stats-row + filter-row + grid -->
+    <div class="main-content">
+      <div class="main-header">
+        <div class="main-title">我的作品集</div>
+        <!-- 这里使用 div包起来，方便后续添加其他按钮元素 -->
+        <div class="main-actions">
+          <button class="btn-download">⬇️ 批量下载</button>
+        </div>
+      </div>
+      <div class="main-stats-row">
+        <div class="main-stats-item">
+          <span class="main-stats-num">127</span>
+          <span class="main-stats-label">总作品数</span>
+        </div>
+        <div class="main-stats-item">
+          <span class="main-stats-num">43</span>
+          <span class="main-stats-label">公开展示</span>
+        </div>
+        <div class="main-stats-item">
+          <span class="main-stats-num">1,240</span>
+          <span class="main-stats-label">获得点赞</span>
+        </div>
+        <div class="main-stats-item">
+          <span class="main-stats-num">2</span>
+          <span class="main-stats-label">生成中</span>
+        </div>
+      </div>
+      <div class="main-filter-row">
+        <div class="main-filter-btns">
+          <button class="main-filter-btn active">全部</button>
+          <button class="main-filter-btn">文生图</button>
+          <button class="main-filter-btn">图生视频</button>
+          <button class="main-filter-btn">其他</button>
+        </div>
+        <select class="main-filter-select">
+          <option>最新优先</option>
+          <option>最早优先</option>
+          <option>最多点赞</option>
+        </select>
+        <div class="main-filter-search">
+          🔍
+          <input type="text" placeholder="搜索作品描述...">
+        </div>
+        <div class="main-filter-right">
+          <button class="btn-view active">⊞</button>
+          <button class="btn-view">☰</button>
+        </div>
+      </div>
+      <div class="main-grid">
+        <!-- 一个card包含：thumb(背景色+图标) + overlap(半透明黑罩+按钮+描述，平时隐藏) + meta(底部文字说明) -->
+         <!-- 卡片的thumb区域的背景色复用 blog-list.css里定义的背景色 -->
+         <!-- 第一张卡片特殊，是正在生成，加一个generating类 -->
+        <div class="work-card generating">
+          <div class="gen-thumb">
+            <div class="gen-spinner"></div>
+            <div class="gen-progress">
+              <div class="gen-bar"></div>
+            </div>
+            <div class="gen-label">生成中...约 4s</div>
+          </div>
+          <div class="work-meta">
+            <div class="work-info-row">
+              <span class="work-info-tag">文生图</span>
+              <span class="work-info-status status-generating">⚡生成中</span>
+            </div>
+            <div class="work-params">1024×1024 · 30 steps</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc1">🌆</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🔒</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"赛博朋克城市夜景，霓虹灯雨后倒影"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+            <div class="work-info-row">
+              <span class="work-info-tag">文生图</span>
+              <span class="work-info=status status-public">🌐公开</span>
+            </div>
+            <div class="work-date">2026-03-24 · 消耗 4 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc7">🌸</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🌐</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"水彩风格牡丹，粉色渐变，工笔画质感"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">文生图</span>
+                <span class="work-info-status status-private">🔒私密</span>
+              </div>
+              <div class="work-date">2026-03-23 · 消耗 2 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc2">🤖</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🔒</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"未来机器人，概念艺术，油画质感"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">文生图</span>
+                <span class="work-info-status status-private">🔒私密</span>
+              </div>
+              <div class="work-date">2026-03-22 · 消耗 4 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc3">🌊</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🔒</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"海浪拍打礁石，慢镜头效果"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">图生视频</span>
+                <span class="work-info-status status-public">🌐公开</span>
+              </div>
+              <div class="work-date">2026-03-21 · 消耗 20 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc6">🦊</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🌐</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"森林精灵小狐狸，吉卜力风格"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">文生图</span>
+                <span class="work-info-status status-private">🔒私密</span>
+              </div>
+              <div class="work-date">2026-03-20 · 消耗 2 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc5">🌙</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🔒</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"月光下的少女，日本和风插画"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">风格迁移</span>
+                <span class="work-info-status status-public">🌐公开</span>
+              </div>
+              <div class="work-date">2026-03-18 · 消耗 3 积分</div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-thumb blog-card-bgc4">🏛️</div>
+          <div class="work-overlay">
+            <div class="work-overlay-top">
+              <div class="work-overlay-btn">⬇️</div>
+              <div class="work-overlay-btn">🔒</div>
+              <div class="work-overlay-btn">🗑️</div>
+            </div>
+            <div class="work-overlay-bottom">
+              <div class="work-overlay-prompt">"废墟中的图书馆，神秘光线"</div>
+            </div>
+          </div>
+          <div class="work-meta">
+              <div class="work-info-row">
+                <span class="work-info-tag">文生图</span>
+                <span class="work-info-status status-private">🔒私密</span>
+              </div>
+              <div class="work-date">2026-03-17 · 消耗 4 积分</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

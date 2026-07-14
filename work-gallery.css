@@ -1,0 +1,369 @@
+body {
+    padding-top: 0;    /* style.css里已经设置了padding-top: 64px;这里没有 header,不需要给 body区域留上间距 */
+}
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 64px;
+}
+.nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.nav-link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 7px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: #A0A0B8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-link:hover {
+    color: #18181F;
+}
+.nav-link.active {
+    background: #faf0ff;
+    color: #18181F;
+}
+.nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.credits-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #faf0ff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    font-size: 13px;
+}
+.credits-num {
+    font-weight: 700;
+}
+.btn-generate {
+    padding: 7px 16px;
+    font-weight: 600;
+    background: #b06af8;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fff;
+}
+.user-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f3d4ff, #ffd9ee);
+    font-size: 16px;
+    cursor: pointer;
+}
+.page-layout {
+    display: flex;
+}
+.sidebar {
+    padding: 20px 12px;
+    width: 200px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.sidebar-title {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    color: #A0A0B8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    margin-bottom: 2px;
+    color: #18181F;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.sidebar-item:hover {
+    background: #EBEBFA;
+    color: #9333ea;
+}
+.sidebar-item.active {
+    color: #9333ea;
+    background: #f7e7ff;
+}
+.main-content {
+    flex: 1;     /* 主内容区域占据剩余空间 */
+    padding: 28px 32px;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+.main-header {
+    font-size: 22px;
+    font-weight: 700;
+}
+.main-actions {
+    /* 这里虽然只有一个“批量下载”按钮，但也设置一下flex布局，方便后续添加其他按钮元素 */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn-download {
+    padding: 7px 14px;
+    font-size: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f7e7ff;
+    color: #18181F;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.main-stats-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.main-stats-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+    background: #faf0ff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    padding: 8px 14px;
+}
+.main-stats-num {
+    font-weight: 700;
+}
+.main-stats-label {
+    color: #606078;
+}
+/* 第4个统计项的数字颜色为紫色，单独设置 */
+.main-stats-item:nth-child(4) .main-stats-num {
+    color: #9333ea;
+}
+.main-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+/* filter 的控件的公共样式，不同控件在公共样式的基础上再设置不同样式 */
+.main-filter-btns,
+.main-filter-select,
+.main-filter-search,
+.main-filter-right {
+    font-size: 13px;
+    background: #faf0ff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.main-filter-btns {
+    display: flex;   /* button是行内块，使用flex布局，让多个按钮横排成一组控件，使得高度、对齐更好控制 */
+    overflow: hidden; /* btns有圆角，子级 btn是直角，容易把圆角顶破，让子级 btn超出部分隐藏，让整组内容都待在圆角盒子里面 */
+}
+.main-filter-btn {
+    border: none;
+    background: transparent;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+/* 把最后一个按钮的右边框去掉，避免圆角被顶破和边框线重叠 */
+.main-filter-btn:last-child {
+    border-right: none;
+}
+.main-filter-btn:hover {
+    color: #9333ea;
+}
+.main-filter-btn.active {
+    background: #f3d4ff;
+    font-weight: 500;
+    color: #9333ea;
+}
+.main-filter-select,
+.main-filter-search {
+    padding: 7px 12px;
+}
+.main-filter-select {
+    outline: none;    /* 去掉下拉框的默认轮廓 */
+    cursor: pointer;
+}
+.main-filter-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.main-filter-search input {
+    border: none;
+    background: transparent;
+    outline: none;    /* 去掉搜索框的默认轮廓 */
+    min-width: 200px;  /* 最小宽度为200px */
+}
+.main-filter-right {
+    display: flex;      /* 按钮横排，并在交叉轴上撑满高度 */
+    margin-left: auto;  /* 让搜索框靠右对齐 */
+    overflow: hidden;
+}
+.btn-view {
+    padding: 7px 10px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all 0.3s;
+}
+.btn-view.active {
+    color: #9333ea;
+    background: #f3d4ff;
+}
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+.work-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background: #faf0ff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.work-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(123, 94, 240, 0.3);
+}
+.work-card.generating {
+    border-color: #9333ea;
+}
+.gen-thumb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #edd0ff;
+    aspect-ratio: 1;    /* 宽高比为1:1，保持正方形 */
+}
+.gen-spinner {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid rgba(123, 94, 240, 0.2);
+    border-top-color: #7b5ef0;
+}
+.gen-progress {
+    height: 3px;
+    width: 80%;
+    border-radius: 2px;
+    background: #7b5ef0;
+}
+.gen-label {
+    font-size: 12px;
+    color: #A0A0B8;
+}
+.work-thumb {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+/* 这里如果 overlay想只盖住图片区域，就设 thumb为（父级）相对定位，overlay为（子级）绝对定位，并设置 inset: 0; */
+.work-overlay {
+    /* 如果只写绝对定位，不指定位置和尺寸，元素会自动根据内容撑开，不会自动铺满父级card */
+    position: absolute;  /* 绝对定位，让 overlay找到的第一个父级是card,overlay覆盖在card上面 */
+    inset: 0;     /* 表示 top,right,bottom,left都为0，让 overlay 占满整个 card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    /* top: 0;
+    right: 0; */
+}
+.work-card:hover .work-overlay {
+    opacity: 1;
+}
+.work-overlay-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #EBEBFA;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.work-overlay-top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+.work-overlay-prompt {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #fff;
+}
+.work-meta {
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 11px;
+}
+.work-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #9333ea;
+    font-weight: 500;
+}
+.work-info-tag {
+    padding: 2px 7px;
+    background: #f3d4ff;
+    border-radius: 24px;
+}
+.work-info-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.status-generating {
+    color: #9333ea;
+}
+.status-public {
+    color: #249E40;
+}
+.status-private {
+    color: #606078;
+}
+.work-params,
+.work-date {
+    color: #606078;
+}
